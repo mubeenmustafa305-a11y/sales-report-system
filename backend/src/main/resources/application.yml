@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: sales-report-system
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:sales_report}
+    username: ${DB_USER:sales_user}
+    password: ${DB_PASSWORD:sales_pass}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+    open-in-view: false
+
+server:
+  port: ${SERVER_PORT:8080}
+
+# Base URL used by internal HTTP clients to call mock APIs and callback endpoints
+app:
+  base-url: ${APP_BASE_URL:http://localhost:8080}
+  partner:
+    callback-delay-ms: ${PARTNER_CALLBACK_DELAY_MS:4000}
+
+logging:
+  level:
+    com.salesreport: INFO
+    org.springframework.web: INFO
