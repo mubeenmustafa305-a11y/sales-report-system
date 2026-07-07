@@ -1,0 +1,27 @@
+# Compiled output
+target/
+dist/
+node_modules/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.local
+
+# Logs
+*.log
+
+# Local tooling (do not commit bundled Maven, etc.)
+tools/
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
